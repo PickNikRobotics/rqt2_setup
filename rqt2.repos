@@ -1,0 +1,33 @@
+repositories:
+  rqt2/python_qt_binding:
+    type: git
+    url: git@github.com:ros-visualization/python_qt_binding.git
+    version: crystal-devel
+  rqt2/qt_gui_core:
+    type: git
+    url: git@github.com:ros-visualization/qt_gui_core.git
+    version: crystal-devel
+  rqt2/rqt:
+    type: git
+    url: git@github.com:ros-visualization/rqt.git
+    version: crystal-wip
+  rqt2/rqt_msg:
+    type: git
+    url: git@github.com:ros-visualization/rqt_msg.git
+    version: ros2-port
+  rqt2/rqt_publisher:
+    type: git
+    url: git@github.com:ros-visualization/rqt_publisher.git
+    version: ros2_port
+  rqt2/rqt_py_console:
+    type: git
+    url: git@github.com:ros-visualization/rqt_py_console.git
+    version: crystal-port
+  rqt2/rqt_shell:
+    type: git
+    url: git@github.com:ros-visualization/rqt_shell.git
+    version: executable-fixup
+  rqt2/rqt_srv:
+    type: git
+    url: git@github.com:ros-visualization/rqt_srv.git
+    version: ros2-port
