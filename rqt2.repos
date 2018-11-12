@@ -26,7 +26,7 @@ repositories:
   rqt2/rqt_shell:
     type: git
     url: git@github.com:ros-visualization/rqt_shell.git
-    version: executable-fixup
+    version: crystal-devel
   rqt2/rqt_srv:
     type: git
     url: git@github.com:ros-visualization/rqt_srv.git
