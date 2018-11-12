@@ -10,6 +10,8 @@ TODO: After Crystal release, support building RQT2 on top of debian ROS2 package
 
 ### Install Dependencies
 
+This section is only necessary if you haven't install ROS2 from source:
+
     sudo apt-get install python3-vcstool python3-rosdep2
 
 If you haven't already, initialize rosdep:
