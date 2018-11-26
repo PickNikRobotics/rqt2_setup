@@ -1,33 +1,31 @@
 # RQT2
 
-## Install ROS2
+## Setup
 
-In order to reproduce our setup follow the instructions on the ros2 wiki for [installing ROS2 from source on Ubuntu 18.04](https://index.ros.org/doc/ros2/Linux-Development-Setup/).
+In order to reproduce our setup follow the instructions on the ros2 wiki for [installing ROS2 from source on Ubuntu 18.04](https://index.ros.org/doc/ros2/Linux-Development-Setup/) stopping before the section: *Get ROS 2.0 code*.
 
 TODO: After Crystal release, support building RQT2 on top of debian ROS2 packages
 
 ## Build From Source
 
-### Install Dependencies
-
-This section is only necessary if you haven't install ROS2 from source:
-
-    sudo apt-get install python3-vcstool python3-rosdep2
-
-If you haven't already, initialize rosdep:
-
-    sudo rosdep init
-    rosdep update
-
-### Download RQT2 repositories and dependencies
+### Download ROS2 and RQT2 Repositories
 
     mkdir -p ~/ros2_ws/src
     cd ~/ros2_ws
+    wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos
     wget https://raw.githubusercontent.com/PickNikRobotics/rqt2_setup/master/rqt2.repos
-    vcs import src < rqt2.repos
-    rosdep install --from-paths src --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers rqt_console rqt_gui_cpp"
+    vcs import src --force < ros2.repos
+    vcs import src --force < rqt2.repos
 
-### Build the RQT2 repositories
+### Install Dependencies
+
+    sudo rosdep init
+    rosdep update
+    rosdep install --from-paths src --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers rqt_gui_cpp"
+
+**Note:** If you see the error message about mulitply packages named *uncrustify_vendor* then run `rm -rf ~/ros2_ws/src` and start this section again.
+
+### Build ROS2 and RQT2
 
     colcon build
 
@@ -50,6 +48,10 @@ Advanced colcon usages:
 TODO: Release when Crystal is released
 
 ## Run Examples
+
+RQT Gui:
+
+    ros2 run rqt_gui rqt_gui
 
 RQT Shell:
 

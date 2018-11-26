@@ -18,11 +18,11 @@ repositories:
   rqt2/rqt_publisher:
     type: git
     url: git@github.com:ros-visualization/rqt_publisher.git
-    version: ros2_port
+    version: crystal-devel
   rqt2/rqt_py_console:
     type: git
     url: git@github.com:ros-visualization/rqt_py_console.git
-    version: crystal-port
+    version: crystal-devel
   rqt2/rqt_shell:
     type: git
     url: git@github.com:ros-visualization/rqt_shell.git
@@ -30,4 +30,17 @@ repositories:
   rqt2/rqt_srv:
     type: git
     url: git@github.com:ros-visualization/rqt_srv.git
-    version: ros2-port
+    version: crystal-devel
+  rqt2/rqt_console:
+    type: git
+    url: git@github.com:ros-visualization/rqt_console.git
+    version: crystal-devel
+  ros2/rcl_interfaces:
+    type: git
+    url: git@github.com:nburek/rcl_interfaces.git
+    version: logging
+  ros2/rosidl_python:
+    type: git
+    url: git@github.com:PickNikRobotics/rosidl_python.git
+    version: slot-types
+
