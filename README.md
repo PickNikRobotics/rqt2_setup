@@ -1,34 +1,26 @@
-# RQT2
+# RQT1
 
-## Install ROS2
+## Setup
 
-In order to reproduce our setup follow the instructions on the ros2 wiki for [installing ROS2 from source on Ubuntu 18.04](https://index.ros.org/doc/ros2/Linux-Development-Setup/).
+In order to reproduce our setup first create a ROS2 workspace at `~/ros2_ws/` by following the instructions on the ros2 wiki at: [installing ROS2 from source on Ubuntu 18.04](https://index.ros.org/doc/ros2/Linux-Development-Setup/)
 
-TODO: After Crystal release, support building RQT2 on top of debian ROS2 packages
+## Build ROS2 and RQT2 From Source
 
-## Build From Source
+### Download ROS2 and RQT2 Repositories
+
+    cd ~/ros2_ws
+    wget https://raw.githubusercontent.com/PickNikRobotics/rqt2_setup/master/rqt2.repos
+    vcs import src --force < rqt2.repos
 
 ### Install Dependencies
 
-This section is only necessary if you haven't install ROS2 from source:
+    rosdep install --from-paths src --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers rqt_gui_cpp"
 
-    sudo apt-get install python3-vcstool python3-rosdep2
+**Note:** Some dependencies are skipped including *rqt_gui_cpp* which aren't yet fully ported or are othewise not yet available from rosdep.
 
-If you haven't already, initialize rosdep:
+### Build ROS2 and RQT2
 
-    sudo rosdep init
-    rosdep update
-
-### Download RQT2 repositories and dependencies
-
-    mkdir -p ~/ros2_ws/src
-    cd ~/ros2_ws
-    wget https://raw.githubusercontent.com/PickNikRobotics/rqt2_setup/master/rqt2.repos
-    vcs import src < rqt2.repos
-    rosdep install --from-paths src --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers rqt_console rqt_gui_cpp"
-
-### Build the RQT2 repositories
-
+    cd ~/ros2_ws/
     colcon build
 
 Advanced colcon usages:
@@ -51,10 +43,16 @@ TODO: Release when Crystal is released
 
 ## Run Examples
 
-RQT Shell:
+Launching RQT gui will bring up a window where you can load and unload RQT plugins.
+
+    ros2 run rqt_gui rqt_gui
+
+Alternatively, you can run individual plugins.
+
+ - RQT Shell:
 
     ros2 run rqt_shell rqt_shell
 
-RQT Python Console
+ - RQT Python Console
 
     ros2 run rqt_py_console rqt_py_console
