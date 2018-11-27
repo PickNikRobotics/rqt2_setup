@@ -6,6 +6,11 @@ In order to reproduce our setup first create a ROS2 workspace at `~/ros2_ws/` by
 
 ## Build ROS2 and RQT2 From Source
 
+Instlal PySide2 for Shiboken:
+
+    pip3 install -U --user pyside2
+    pip3 install -U --user pydot
+
 ### Download ROS2 and RQT2 Repositories
 
     cd ~/ros2_ws
@@ -27,11 +32,11 @@ Advanced colcon usages:
 
  - Show verbose output:
 
-      colcon build --event-handlers console_direct+
+        colcon build --event-handlers console_direct+
 
  - Only build one package and its dependencies:
 
-      colcon build --packages-up-to rqt_shell
+        colcon build --packages-up-to rqt_shell
 
 ### Source your environment
 
@@ -51,8 +56,8 @@ Alternatively, you can run individual plugins.
 
  - RQT Shell:
 
-    ros2 run rqt_shell rqt_shell
+        ros2 run rqt_shell rqt_shell
 
  - RQT Python Console
 
-    ros2 run rqt_py_console rqt_py_console
+        ros2 run rqt_py_console rqt_py_console
