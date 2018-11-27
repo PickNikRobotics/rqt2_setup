@@ -1,32 +1,26 @@
-# RQT2
+# RQT1
 
 ## Setup
 
-In order to reproduce our setup follow the instructions on the ros2 wiki for [installing ROS2 from source on Ubuntu 18.04](https://index.ros.org/doc/ros2/Linux-Development-Setup/) stopping before the section: *Get ROS 2.0 code*.
+In order to reproduce our setup first create a ROS2 workspace at `~/ros2_ws/` by following the instructions on the ros2 wiki at: [installing ROS2 from source on Ubuntu 18.04](https://index.ros.org/doc/ros2/Linux-Development-Setup/)
 
-TODO: After Crystal release, support building RQT2 on top of debian ROS2 packages
-
-## Build From Source
+## Build ROS2 and RQT2 From Source
 
 ### Download ROS2 and RQT2 Repositories
 
-    mkdir -p ~/ros2_ws/src
     cd ~/ros2_ws
-    wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos
     wget https://raw.githubusercontent.com/PickNikRobotics/rqt2_setup/master/rqt2.repos
-    vcs import src --force < ros2.repos
     vcs import src --force < rqt2.repos
 
 ### Install Dependencies
 
-    sudo rosdep init
-    rosdep update
     rosdep install --from-paths src --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers rqt_gui_cpp"
 
-**Note:** If you see the error message about mulitply packages named *uncrustify_vendor* then run `rm -rf ~/ros2_ws/src` and start this section again.
+**Note:** Some dependencies are skipped including *rqt_gui_cpp* which aren't yet fully ported or are othewise not yet available from rosdep.
 
 ### Build ROS2 and RQT2
 
+    cd ~/ros2_ws/
     colcon build
 
 Advanced colcon usages:
@@ -49,14 +43,16 @@ TODO: Release when Crystal is released
 
 ## Run Examples
 
-RQT Gui:
+Launching RQT gui will bring up a window where you can load and unload RQT plugins.
 
     ros2 run rqt_gui rqt_gui
 
-RQT Shell:
+Alternatively, you can run individual plugins.
+
+ - RQT Shell:
 
     ros2 run rqt_shell rqt_shell
 
-RQT Python Console
+ - RQT Python Console
 
     ros2 run rqt_py_console rqt_py_console

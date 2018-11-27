@@ -10,7 +10,7 @@ repositories:
   rqt2/rqt:
     type: git
     url: git@github.com:ros-visualization/rqt.git
-    version: crystal-wip
+    version: rqt-py-common-message-helpers
   rqt2/rqt_msg:
     type: git
     url: git@github.com:ros-visualization/rqt_msg.git
@@ -37,8 +37,8 @@ repositories:
     version: crystal-devel
   ros2/rcl_interfaces:
     type: git
-    url: git@github.com:nburek/rcl_interfaces.git
-    version: logging
+    url: git@github.com:picknikrobotics/rcl_interfaces.git
+    version: only-log-msg
   ros2/rosidl_python:
     type: git
     url: git@github.com:PickNikRobotics/rosidl_python.git
