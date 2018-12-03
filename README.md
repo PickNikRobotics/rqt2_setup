@@ -4,6 +4,8 @@
 
 In order to reproduce our setup first create a ROS2 workspace at `~/ros2_ws/` by following the instructions on the ros2 wiki at: [installing ROS2 from source on Ubuntu 18.04](https://index.ros.org/doc/ros2/Linux-Development-Setup/)
 
+**Note:** RQT2 depends on the latest version of ROS2 repos. You *must* use ``https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos`` instead of ``https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos``
+
 ## Build ROS2 and RQT2 From Source
 
 Instlal PySide2 for Shiboken:
@@ -17,11 +19,19 @@ Instlal PySide2 for Shiboken:
     wget https://raw.githubusercontent.com/PickNikRobotics/rqt2_setup/master/rqt2.repos
     vcs import src --force < rqt2.repos
 
+**Note:** ``rqt_image_view`` requires additional dependencies. To install ``rqt_image_view`` you must additionally run:
+
+    wget https://raw.githubusercontent.com/PickNikRobotics/rqt2_setup/master/image_view.repos
+    vcs import src --force < image_view.repos
+
 ### Install Dependencies
 
-    rosdep install --from-paths src --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers rqt_gui_cpp"
+    rosdep install --from-paths src --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers"
 
-**Note:** Some dependencies are skipped including *rqt_gui_cpp* which aren't yet fully ported or are othewise not yet available from rosdep.
+If you are setting up your workspace as an [overlay](https://index.ros.org/doc/ros2/Colcon-Tutorial/#create-an-overlay), then you will need to add your underlaid workspace to your paths like so:
+
+    rosdep install --from-paths src ~/ros2_ws/src/ --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers"
+
 
 ### Build ROS2 and RQT2
 

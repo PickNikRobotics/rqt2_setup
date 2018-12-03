@@ -6,7 +6,7 @@ repositories:
   rqt2/qt_gui_core:
     type: git
     url: git@github.com:ros-visualization/qt_gui_core.git
-    version: crystal-devel
+    version: rqt-gui-cpp-exp
   rqt2/rqt:
     type: git
     url: git@github.com:ros-visualization/rqt.git
@@ -35,12 +35,9 @@ repositories:
     type: git
     url: git@github.com:ros-visualization/rqt_console.git
     version: crystal-devel
-  ros2/rcl_interfaces:
+  rqt2/rqt_service_caller:
     type: git
-    url: git@github.com:picknikrobotics/rcl_interfaces.git
-    version: only-log-msg
-  ros2/rosidl_python:
-    type: git
-    url: git@github.com:PickNikRobotics/rosidl_python.git
-    version: slot-types
+    url: git@github.com:ros-visualization/rqt_service_caller.git
+    version: crystal-devel
+
 
