@@ -6,7 +6,7 @@ repositories:
   rqt2/qt_gui_core:
     type: git
     url: git@github.com:ros-visualization/qt_gui_core.git
-    version: crystal-devel
+    version: rqt-gui-cpp-exp
   rqt2/rqt:
     type: git
     url: git@github.com:ros-visualization/rqt.git
@@ -35,12 +35,25 @@ repositories:
     type: git
     url: git@github.com:ros-visualization/rqt_console.git
     version: crystal-devel
-  ros2/rcl_interfaces:
-    type: git
-    url: git@github.com:picknikrobotics/rcl_interfaces.git
-    version: only-log-msg
-  ros2/rosidl_python:
-    type: git
-    url: git@github.com:PickNikRobotics/rosidl_python.git
-    version: slot-types
+#  rqt2/rqt_service_caller:
+#    type: git
+#    url: git@github.com:ros-visualization/rqt_service_caller.git
+#    version: crystal-devel
 
+  # RQT image view
+  rqt2/rqt_image_view:
+    type: git
+    url: git@github.com:ros-visualization/rqt_image_view.git
+    version: ros2-port
+  ros-perception/image_common:
+    type: git
+    url: git@github.com:ros-perception/image_common.git
+    version: ros2
+  ros2/message_filters:
+    type: git
+    url: git@github.com:ros2/message_filters.git
+    version: master
+  ros-perception/vision_opencv:
+    type: git
+    url: git@github.com:ros-perception/vision_opencv.git
+    version: ros2
