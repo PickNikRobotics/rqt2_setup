@@ -1,4 +1,4 @@
-# RQT1
+# RQT2
 
 ## Setup
 
@@ -75,4 +75,4 @@ To see the C++ plugin interface in action run ``rqt_image_view`` with the follow
 
  - In another terminal:
 
-        ros2 run rqt_image_view image_publisher.py
+        ros2 run rqt_image_view image_publisher
