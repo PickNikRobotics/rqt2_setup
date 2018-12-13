@@ -6,7 +6,7 @@ repositories:
   rqt2/qt_gui_core:
     type: git
     url: git@github.com:ros-visualization/qt_gui_core.git
-    version: rqt-gui-cpp-exp
+    version: crystal-devel
   rqt2/rqt:
     type: git
     url: git@github.com:ros-visualization/rqt.git
@@ -35,16 +35,24 @@ repositories:
     type: git
     url: git@github.com:ros-visualization/rqt_console.git
     version: crystal-devel
-#  rqt2/rqt_service_caller:
-#    type: git
-#    url: git@github.com:ros-visualization/rqt_service_caller.git
-#    version: crystal-devel
+  rqt2/rqt_service_caller:
+    type: git
+    url: git@github.com:ros-visualization/rqt_service_caller.git
+    version: crystal-devel
+  rqt2/rqt_plot:
+    type: git
+    url: git@github.com:ros-visualization/rqt_plot.git
+    version: crystal-devel
+  rqt2/rqt_top:
+    type: git
+    url: git@github.com:ros-visualization/rqt_top.git
+    version: crystal-devel
 
   # RQT image view
   rqt2/rqt_image_view:
     type: git
     url: git@github.com:ros-visualization/rqt_image_view.git
-    version: ros2-port
+    version: crystal-devel
   ros-perception/image_common:
     type: git
     url: git@github.com:ros-perception/image_common.git
